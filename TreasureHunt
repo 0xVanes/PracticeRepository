@@ -1,0 +1,48 @@
+# Game data
+locations = {
+    'start': {
+        'description': "You are at the starting point. There are two paths: left and right.",
+        'options': {'left': 'forest', 'right': 'cave'}
+    },
+    'forest': {
+        'description': "You are in a dense forest. There are two paths: forward and backward.",
+        'options': {'forward': 'river', 'backward': 'start'}
+    },
+    'cave': {
+        'description': "You are inside a dark cave. There are two paths: forward and backward.",
+        'options': {'forward': 'treasure', 'backward': 'start'}
+    },
+    'river': {
+        'description': "You are at the edge of a roaring river. There is no way forward.",
+        'options': {'backward': 'forest'}
+    },
+    'treasure': {
+        'description': "You've found the treasure! Congratulations!",
+        'options': {}
+    }
+}
+
+#introduction
+print("Welcome to the Adventure Game!")
+current_location = str(input("To begin the game, write start: ").lower())
+
+while current_location !='start':
+  current_location = str(input("To begin the game, write start: ").lower())
+else:
+  current_location == 'start'
+#start the game
+  while True:
+  
+    print(locations[current_location]['description'])
+    option = locations[current_location]['options'].keys()
+    print(option)
+    option = input("Which path will you choose? ").lower()
+  
+    if option in locations[current_location]['options']:
+      current_location = locations[current_location]['options'][option]
+      
+      if current_location == 'treasure':
+        print(locations[current_location]['description'])
+        break
+    else:
+      print("Invalid option please write again")
