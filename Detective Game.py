@@ -2,18 +2,18 @@
 print("You are a detective trying to solve a mysterious disappearance. A wealthy businessman, Mr. White, has vanished from his mansion. You must explore the mansion, discover hidden clues, and solve puzzles to unravel the mystery and find Mr. White.")
 
 People = {
-  'Mr. White': 'A wealthy businessman who has vanished from his mansion.', 
-  'Mr. Blue': 'A friend of Mr. White who has anxiety.',
-  'Mr. Red': 'A colleague of Mr. White who has only one leg.',
-  'Mr. Black': 'Was the husband of Mrs. Pink',
-  'Mrs. Pink': 'A very beautiful secretary of Mr. White'}
+'Mr. White': 'A wealthy businessman who has vanished from his mansion.', 
+'Mr. Blue': 'A friend of Mr. White who has anxiety.',
+'Mr. Red': 'A colleague of Mr. White who has only one leg.',
+'Mr. Black': 'Was the husband of Mrs. Pink',
+'Mrs. Pink': 'A very beautiful secretary of Mr. White'}
 
 print(f"{People} are the people in the mansion.")
 
 #implement a timer for the game. The player should have a limited amount of time to complete all the puzzles.
-import time                               
+import time
 
-time.sleep(10)
+time.sleep(5)
 print("\nYou have 5 minutes to finish the challenge. Start now!")
 timer = 301
 while timer > 0:
@@ -88,29 +88,29 @@ while timer > 0:
     ]
     solvedpuzzle = 0
     while len(puzzles) != 0:
-      
+
       random_puzzle = random.choice(puzzles)
       print(random_puzzle['question'])
-      answer = input("Your answer: ")
+      answer = input("Your answer: ").lower()
       if answer != random_puzzle['solution']:
         print("You are wrong! We will deduct 5s from your timer")
         timer -= 5
         print(f"You have {timer} seconds left.")
         puzzles.remove(random_puzzle)
       elif answer == random_puzzle['solution']:
-        print(random_puzzle['story'])
-        solvedpuzzle += 1
-        puzzles.remove(random_puzzle)
-      
+            print(random_puzzle['story'])
+            solvedpuzzle += 1
+            puzzles.remove(random_puzzle)
+
     else:
       print("No more puzzle.")
       print(f"Total puzzle solved = {solvedpuzzle}")
     if solvedpuzzle >= 4 and len(puzzles) == 0:
         Trial = 3
-        Murderer = input(f"Who is the murderer? (You have {Trial} guesses) ")
+        Murderer = input(f"Who is the murderer? (You have {Trial} guesses) ").lower
         while Trial != 1 and Murderer != 'mrs. pink':
             Trial -= 1
-            print(f"Try again. You have {Trial} guesses left.").
+            print(f"Try again. You have {Trial} guesses left.")
             Murderer = input(f"Who is the murderer? (You have {Trial} guesses) ").lower()
             if Murderer == 'mrs. pink':
                 print("You are right! You win!")
@@ -118,6 +118,6 @@ while timer > 0:
             else:
                 print("You lose!")
     break
- 
+
 else:
   print("Time's up! You Lose!")
