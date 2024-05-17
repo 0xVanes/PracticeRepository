@@ -77,7 +77,7 @@ import time
 
 
 def play_puzzle(puzzle, time_limit, solvedpuzzle):       
-     
+
      while len(puzzles) != 0:
 
        random_puzzle = random.choice(puzzles)
@@ -90,19 +90,21 @@ def play_puzzle(puzzle, time_limit, solvedpuzzle):
          if len(puzzles) == 0:
              print("No more puzzle.")
              print(f"Total puzzle solved = {10-solvedpuzzle}")
-             bonuspuzzle()
+             if solvedpuzzle <= 6:
+                 bonuspuzzle()
              break
          return play_timer(time_limit, solvedpuzzle)
        elif answer == random_puzzle['solution']:
              print(random_puzzle['story'])
              time.sleep(5)
              puzzles.remove(random_puzzle)
-             
+
 
      else:
        print("No more puzzle.")
        print(f"Total puzzle solved = {10-solvedpuzzle}")
-       bonuspuzzle()
+       if solvedpuzzle <= 6:
+           bonuspuzzle()
 
 
 def play_timer(time_limit, solvedpuzzle):
@@ -116,23 +118,21 @@ def play_timer(time_limit, solvedpuzzle):
             else:
                 print(f"You have {round(time_limit - elapsed_time)} seconds left.")
                 play_puzzle(puzzle, time_limit, solvedpuzzle)
-    
-            
+
+
 def bonuspuzzle():
-    correct = 10-solvedpuzzle
-    if correct >= 4 and len(puzzles) == 0:
-         Trial = 3
-         Murderer = input(f"Who is the murderer? (You have {Trial} guesses) ").lower
-         while Trial != 1 and Murderer != 'mrs. pink':
-             Trial -= 1
-             print(f"Try again. You have {Trial} guesses left.")
-             Murderer = input(f"Who is the murderer? (You have {Trial} guesses) ").lower()
-             if Murderer == 'mrs. pink':
-                 print("You are right! You win!")
-                 print("Mrs. Pink is the murderer. She knew that Mr. White was the one who killed Mr. Black, so she make Mr. Blue who is currently in love with Mrs. Pink make Mr. White go bankrupt. Mr. White is now in debt and he met Mrs. Pink to ask for financial aid. But since Mrs. Pink knew that he will come to her sooner or later, she decided to kill him with a lever.")
-             else:
-                 print("You lose!")
-                 break
+    Trial = 3
+    Murderer = input(f"Who is the murderer? (You have {Trial} guesses) ").lower
+    while Trial != 1 and Murderer != 'mrs. pink':
+         Trial -= 1
+         print(f"Try again. You have {Trial} guesses left.")
+         Murderer = input(f"Who is the murderer? (You have {Trial} guesses) ").lower()
+         if Murderer == 'mrs. pink':
+             print("You are right! You win!")
+             print("Mrs. Pink is the murderer. She knew that Mr. White was the one who killed Mr. Black, so she make Mr. Blue who is currently in love with Mrs. Pink make Mr. White go bankrupt. Mr. White is now in debt and he met Mrs. Pink to ask for financial aid. But since Mrs. Pink knew that he will come to her sooner or later, she decided to kill him with a lever.")
+         else:
+             print("You lose!")
+             break
 
 
 
