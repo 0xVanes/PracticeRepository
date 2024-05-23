@@ -8,4 +8,10 @@
  ## Detective Game (for python)
  A coding game for finding what happened to Mr. White
  ## Snake Game (for python)
- Made by using prompt engineering
+ Made by using prompt engineering.
+ The word that I ask from Chatgpt-4o was: "I want to create a snake game using python. what steps would I need to do that?"
+ 	At first the game doesn't work and it directly gave me the code, eventhough I only ask for the steps.
+ So the next one that I wrote was: "It does not work on replit"
+ 	So it imported numpy and easygui. And the snake game worked, only left and right.
+ The third command was:"the snake can only move left and right. can you modify the code?"
+ 	So it changed the line: y1_change += y1_change instead of updating y1 with y1_change. SO the game worked 100%
