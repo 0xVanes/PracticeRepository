@@ -7,3 +7,5 @@
  A coding game for treasure hunt
  ## Detective Game (for python)
  A coding game for finding what happened to Mr. White
+ ## Snake Game (for python)
+ Made by using prompt engineering

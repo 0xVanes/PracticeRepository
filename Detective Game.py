@@ -114,7 +114,7 @@ def play_timer(time_limit, solvedpuzzle):
             elapsed_time = time.time() - start_time
             if elapsed_time >= time_limit:
                 print("Time is Up! You Fail!")
-                break
+            break
             else:
                 print(f"You have {round(time_limit - elapsed_time)} seconds left.")
                 play_puzzle(puzzle, time_limit, solvedpuzzle)
