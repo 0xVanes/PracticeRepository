@@ -14,4 +14,6 @@
  So the next one that I wrote was: "It does not work on replit"
  	So it imported numpy and easygui. And the snake game worked, only left and right.
  The third command was:"the snake can only move left and right. can you modify the code?"
- 	So it changed the line: y1_change += y1_change instead of updating y1 with y1_change. SO the game worked 100%
+ 	So it changed the line: y1_change += y1_change instead of updating y1 with y1_change. AND deleted the numpy and easygui once more! SO the game worked 100%
+ ## Tic-Tac-Toe Game (for python)
+ Another game made using chat-gpt. So at first it could give me a good output but the second time putting the output, the rows increases to 6. But now it is already in full functioning game
