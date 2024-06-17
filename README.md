@@ -17,3 +17,5 @@
  	So it changed the line: y1_change += y1_change instead of updating y1 with y1_change. AND deleted the numpy and easygui once more! SO the game worked 100%
  ## Tic-Tac-Toe Game (for python)
  Another game made using chat-gpt. So at first it could give me a good output but the second time putting the output, the rows increases to 6. But now it is already in full functioning game
+ ## My First Practice Token (on solidity)
+ I studied JS for a while then started to learn solidity. So here is my first smart contract for token transaction
