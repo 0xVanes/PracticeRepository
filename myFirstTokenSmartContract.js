@@ -8,12 +8,11 @@ contract MyToken {
 
     string constant public name = "Herring";
     string constant public symbol = "HRR";
-    uint8 constant public decimals = 18;  // Correct naming for ERC-20 compliance
+    uint8 constant public decimals = 18; 
 
     mapping(address => uint256) public balance;  // Should be public to allow visibility
-    mapping(address => mapping(address => uint256)) public allowance;  // Changed variable name for clarity
+    mapping(address => mapping(address => uint256)) public allowance;
 
-    // Correct event names to follow Solidity naming conventions
     event Approval(address indexed owner, address indexed spender, uint256 value);
     event Transfer(address indexed from, address indexed to, uint256 value);
 
@@ -33,7 +32,7 @@ contract MyToken {
         balance[msg.sender] -= value;
         balance[to] += amountToSend;
         balance[feeRecipient] += fee;  // Send the fee to the fee recipient
-        emit Transfer(msg.sender, to, value);  // Corrected `from` to `msg.sender`
+        emit Transfer(msg.sender, to, value);
         return true;
     }
 
